@@ -154,9 +154,9 @@ body {
     </div>
 <script>
 	async function getUser(){
-		const res = await fetch('api/user');
+		const res = await fetch('/api/user');
 		const payload = await res.json()
-		const {body} = payload
+		const { body } = payload
 	}
 	console.log(await getUser());
 </script>
