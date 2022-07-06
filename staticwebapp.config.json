@@ -69,16 +69,7 @@
         "redirect": "/.auth/logout"
       }
     ],
-    "auth": {
-      "identityProviders": {
-        "google": {
-          "registration": {
-            "clientIdSettingName": "$(GOOGLE_CLIENT_ID)",
-            "clientSecretSettingName": "$(GOOGLE_CLIENT_SECRET)"
-          }
-        }
-      }
-    },
+    
     "responseOverrides": {
       "401": {
           "statusCode": 302,
