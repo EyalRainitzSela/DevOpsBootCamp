@@ -70,6 +70,7 @@
       }
     ],
     "auth": {
+      "rolesSource": "api/authuser",
       "identityProviders": {
         "google": {
           "registration": {
