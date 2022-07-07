@@ -6,23 +6,23 @@
       },
       {
         "route": "/introduction/*",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["student","employee","class4student"]
       },
       {
         "route": "/week-01/*",
-        "allowedRoles": ["anonymous"]
+        "allowedRoles": ["employee","student","class4student"]
       },
       {
         "route": "/week-02/*",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["employee","student","class4student"]
       },
       {
         "route": "/week-03/*",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["employee","student","class4student"]
       },
       {
         "route": "/week-04/*",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["employee","student","class4student"]
       },
       {
         "route": "/week-05/*",
@@ -58,7 +58,7 @@
       },
       {
         "route": "/login",
-        "rewrite": "https://SelaDevOpsBOOTCAMPB2C.b2clogin.com/SelaDevOpsBOOTCAMPB2C.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_userflow&client_id=55ba0446-dfbf-4852-bff1-fa96826fcbeb&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwitty-ocean-0bfbb9903.1.azurestaticapps.net%2F&scope=openid&response_type=id_token&prompt=login"
+        "rewrite": "login.html"
       },
       {
         "route": "/.auth/login/twitter",
@@ -69,6 +69,17 @@
         "redirect": "/.auth/logout"
       }
     ],
+    "auth": {
+      "rolesSource": "/api/user",
+      "identityProviders": {
+        "google": {
+          "registration": {
+            "clientIdSettingName": "GOOGLE_CLIENT_ID",
+            "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
+          }
+        }
+      }
+    },
     "responseOverrides": {
       "401": {
           "statusCode": 302,
