@@ -6,23 +6,23 @@
       },
       {
         "route": "/introduction/*",
-        "allowedRoles": ["student","employee","class4student"]
+        "allowedRoles": ["authenticated"]
       },
       {
         "route": "/week-01/*",
-        "allowedRoles": ["employee","student","class4student"]
+        "allowedRoles": ["authenticated"]
       },
       {
         "route": "/week-02/*",
-        "allowedRoles": ["employee","student","class4student"]
+        "allowedRoles": ["authenticated"]
       },
       {
         "route": "/week-03/*",
-        "allowedRoles": ["employee","student","class4student"]
+        "allowedRoles": ["authenticated"]
       },
       {
         "route": "/week-04/*",
-        "allowedRoles": ["employee","student","class4student"]
+        "allowedRoles": ["authenticated"]
       },
       {
         "route": "/week-05/*",
