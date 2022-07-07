@@ -10,7 +10,7 @@
       },
       {
         "route": "/week-01/*",
-        "allowedRoles": ["authenticated"]
+        "allowedRoles": ["anonymous"]
       },
       {
         "route": "/week-02/*",
@@ -58,7 +58,7 @@
       },
       {
         "route": "/login",
-        "rewrite": "login.html"
+        "rewrite": "https://SelaDevOpsBOOTCAMPB2C.b2clogin.com/SelaDevOpsBOOTCAMPB2C.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_userflow&client_id=55ba0446-dfbf-4852-bff1-fa96826fcbeb&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fwitty-ocean-0bfbb9903.1.azurestaticapps.net%2F&scope=openid&response_type=id_token&prompt=login"
       },
       {
         "route": "/.auth/login/twitter",
