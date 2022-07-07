@@ -206,12 +206,13 @@
         </div>
       </div>
       <script>
-        const user = async () => {
+         async function userdata(){
           const response = await fetch("/.auth/me");
           const payload = await response.json();
           const { clientPrincipal } = payload;
           return clientPrincipal;
         };
+		const user = await userdata()
         console.log(user);
         async function AzureFunctionData(accsesData) {
           const post = await fetch(
