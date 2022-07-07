@@ -206,14 +206,28 @@
         </div>
       </div>
       <script>
-        	async function getUserInfo() {
-          const response = await fetch('/.auth/me');
+        const user = async () => {
+          const response = await fetch("/.auth/me");
           const payload = await response.json();
           const { clientPrincipal } = payload;
           return clientPrincipal;
+        };
+        console.log(user);
+        async function AzureFunctionData(accsesData) {
+          const post = await fetch(
+            "https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==",
+            {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+              },
+			  body: accsesData
+            });
+			const content = await post.json();
+			console.log(content);
         }
-			user  = getUserInfo()
-        	console.log(user);
+		console.log(await AzureFunctionData(user))
       </script>
     </div>
   </body>
