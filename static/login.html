@@ -22,37 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script>
-		async function userdata(){
-		 const response = await fetch("/.auth/me");
-		 const payload = await response.json();
-		 const { clientPrincipal } = payload;
-		  return clientPrincipal;
-		  };
-	  const user = await userdata()
-	  console.log(user);
-
-	  async function sendData(user){
-	   let xhr = new XMLHttpRequest()
-	   xhr.open("POST", "https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&");
-	   xhr.setRequestHeader("Accept", "application/json");
-	   xhr.setRequestHeader("Content-Type", "application/json");
-	   xhr.onload = () => console.log(xhr.responseText);
-	  try{
-			  const email = user["userDetails"]
-			  console.log(email)
-			  xhr.send(email)
-		  }catch(error){
-			  email = user
-			  xhr.send(email)
-		  }}
-
-	  async function getuser(user){
-		  const fe = await fetch(`https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&email=${user}`)
-		  const Jfe = await fe.json()
-		  console.log(Jfe)
-	  }
-	</script>
+    
 	<style>
       body {
         background: #dfe7e9;
@@ -238,5 +208,48 @@
       </div>
       
     </div>
+	<script>
+		const user = async () => {
+		 const response = await fetch("/.auth/me");
+		 const payload = await response.json();
+		 const { clientPrincipal } = payload;
+		  return clientPrincipal;
+		  };
+		const item = await user()
+	  	console.log(item);
+
+		const sendData = async (user) => {
+			let xhr = new XMLHttpRequest()
+	   		xhr.open("POST", "https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&");
+	   		xhr.setRequestHeader("Accept", "application/json");
+	  		xhr.setRequestHeader("Content-Type", "application/json");
+	  		xhr.onload = () => console.log(xhr.responseText);
+	  try{
+			  const email = user["userDetails"]
+			  console.log(email)
+			  xhr.send(email)
+		  }catch(error){
+			  email = user
+			  xhr.send(email)
+		  }
+		}
+	   const itemEmail = await sendData(item)
+	   console.log(itemEmail)
+		const getuser = async () => {
+			const get = await fetch('/.auth/me')
+			console.log(get.headers())
+			return get
+		}
+		const getItem =  await getuser()
+		console.log(getItem)
+
+		const users = async () => {
+		  const fe = await fetch(`https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&email=${user}`)
+		  const Jfe = await fe.json()
+		  console.log(Jfe)
+		}
+		const getlist = await users()
+	 console.log(getlist)
+	</script>
   </body>
 </html>
