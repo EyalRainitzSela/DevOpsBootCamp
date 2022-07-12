@@ -33,7 +33,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # filereader = json.loads(streamer.readall())
         # role = search_json(email,filereader)
         # return func.HttpResponse(json.dumps(role))
-        return func.HttpResponse(email)
+        return func.HttpResponse("work")
     except ValueError:
         pass
     return func.HttpResponse("error")
