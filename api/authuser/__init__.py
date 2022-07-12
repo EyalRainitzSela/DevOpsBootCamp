@@ -2,7 +2,7 @@ import logging
 # from azure.storage.blob import BlobServiceClient
 import azure.functions as func
 # import os
-# import json
+import json
 # import requests
 # connect_str = os.getenv('AzureWebJobsStorage')
 # blob_service_client = BlobServiceClient.from_connection_string('DefaultEndpointsProtocol=https;AccountName=staticonweb;AccountKey=yBRMqlUN1PcgvDbjes+fhuJlDqSMK2eZEhlotst3Gcrg2f5k/WbyV3zUHdEiEq+br4pPcuOAlAf3iOhshbHxrQ==;EndpointSuffix=core.windows.net')
@@ -33,7 +33,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         # filereader = json.loads(streamer.readall())
         # role = search_json(email,filereader)
         # return func.HttpResponse(json.dumps(role))
-        return func.HttpResponse("work")
+        arr = [ "work"]
+        return func.HttpResponse(json.dumps(arr))
     except ValueError:
         pass
     return func.HttpResponse("error")
