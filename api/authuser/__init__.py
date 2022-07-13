@@ -5,7 +5,6 @@ import azure.functions as func
 import json
 # import requests
 # connect_str = os.getenv('AzureWebJobsStorage')
-# blob_service_client = BlobServiceClient.from_connection_string('DefaultEndpointsProtocol=https;AccountName=staticonweb;AccountKey=yBRMqlUN1PcgvDbjes+fhuJlDqSMK2eZEhlotst3Gcrg2f5k/WbyV3zUHdEiEq+br4pPcuOAlAf3iOhshbHxrQ==;EndpointSuffix=core.windows.net')
 # # blob_service_client = BlobServiceClient.from_connection_string(connect_str)
 # container_client = blob_service_client.get_container_client("bootcampusers")
 # blob_client = container_client.get_blob_client("users.json")
