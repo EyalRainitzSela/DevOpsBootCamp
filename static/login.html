@@ -208,47 +208,7 @@
       </div>
     </div>
 	<script>
-		const user = async () => {
-		 const response = await fetch("/.auth/me");
-		 const payload = await response.json();
-		 const { clientPrincipal } = payload;
-		  return clientPrincipal;
-		  };
-		const item = await user()
-	  	console.log(item);
-
-		const sendData = async (user) => {
-			let xhr = new XMLHttpRequest()
-	   		xhr.open("POST", "https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&");
-	   		xhr.setRequestHeader("Accept", "application/json");
-	  		xhr.setRequestHeader("Content-Type", "application/json");
-	  		xhr.onload = () => console.log(xhr.responseText);
-	  try{
-			  const email = user["userDetails"]
-			  console.log(email)
-			  xhr.send(email)
-		  }catch(error){
-			  email = user
-			  xhr.send(email)
-		  }
-		}
-	   const itemEmail = await sendData(item)
-	   console.log(itemEmail)
-		const getuser = async () => {
-			const get = await fetch('/.auth/me')
-			console.log(get.headers())
-			return get
-		}
-		const getItem =  await getuser()
-		console.log(getItem)
-
-		const users = async () => {
-		  const fe = await fetch(`https://selacloudpoc.azurewebsites.net/api/authuser?code=7S5329GjMSxw17P0LGyWXb6vuoapEWhEDe9r56eTE6JxAzFuFZgKlA==&email=${user}`)
-		  const Jfe = await fe.json()
-		  console.log(Jfe)
-		}
-		const getlist = await users()
-	 console.log(getlist)
+	
 	</script>
   </body>
 </html>
